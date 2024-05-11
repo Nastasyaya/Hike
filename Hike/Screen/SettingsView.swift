@@ -8,6 +8,17 @@
 import SwiftUI
 
 struct SettingsView: View {
+    // MARK: - PROPERTIES
+    
+    private let alternativaAppIcons: [String] = [
+        "AppIcon-MagnifyingGlass",
+        "AppIcon-Map",
+        "AppIcon-Mushroom",
+        "AppIcon-Camera",
+        "AppIcon-Campfire",
+        "AppIcon-Backpack"
+    ]
+    
     var body: some View {
         List {
             // MARK: - SECTION: HEADER
@@ -48,7 +59,7 @@ struct SettingsView: View {
                 VStack(spacing: 8) {
                     Text("Where can you find \nperfect traks?")
                         .font(.title2)
-                    .fontWeight(.heavy)
+                        .fontWeight(.heavy)
                     
                     Text("The hike looks gorgeous in photos but is even better once you are actually there. The hike that you hope to do again someday. \nFind the best day hikes in the app.")
                         .font(.footnote)
@@ -66,37 +77,68 @@ struct SettingsView: View {
             
             // MARK: - SECTION: ICONS
             
+            Section(header: Text("Alternativ Icons")) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(alternativaAppIcons.indices, id: \.self) { item in
+                            Button {
+                                print("Button \(alternativaAppIcons[item]) was pressed.")
+                                
+                                UIApplication.shared.setAlternateIconName(alternativaAppIcons[item]) { error in
+                                    if  error != nil {
+                                        print("Failed request to update the apps icon: \(String(describing: error?.localizedDescription))")
+                                    } else {
+                                        print("Success! You have changed the app icon to \(alternativaAppIcons[item])")
+                                    }
+                                }
+                            } label: {
+                                Image("\(alternativaAppIcons[item])-Preview")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 80, height: 80)
+                                    .cornerRadius(16)
+                            }
+                            .buttonStyle(.borderless)
+                        }
+                    }
+                } //: SCROLL VIEW
+                .padding(.top, 12)
+                
+                Text("Choose you favorite App Icon from the collection above.")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .font(.footnote)
+                    .padding(.bottom, 12)
+            } //: SECTION
+            .listRowSeparator(.hidden)
+            
             // MARK: - SECTION: ABOUT
+            
             Section(
                 header: Text("About the App"),
                 footer: HStack {
                     Spacer()
-                Text("Copyright © All right reserved.")
+                    Text("Copyright © All right reserved.")
                     Spacer()
                 }
                     .padding(.vertical, 8)
             ) {
-            // 1: Basic Labeled content
-//                LabeledContent("Application", value: "Hike")
-            // 2: Advanced Labeled content
-                LabeledContent {
-                    // Content
-                    Text("Hike")
-                        .foregroundStyle(.primary)
-                        .fontWeight(.heavy)
-                } label: {
-                    HStack {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                .frame(width: 30, height: 30)
-                                .foregroundStyle(.blue)
-                            Image(systemName: "apps.iphone")
-                                .foregroundStyle(.white)
-                                .fontWeight(.semibold)
-                        }
-                        Text("Application")
-                    }
-                }
+                
+                // Labeled content
+                CustomListRowView(rowLabel: "Application", rowIcon: "apps.iphone", rowContent: "Hike", rowTintColor: .blue)
+                
+                CustomListRowView(rowLabel: "Compatibility", rowIcon: "info.circle", rowContent: "iOS, iPad", rowTintColor: .red)
+                
+                CustomListRowView(rowLabel: "Technology", rowIcon: "swift", rowContent: "Swift", rowTintColor: .orange)
+                
+                CustomListRowView(rowLabel: "Version", rowIcon: "gear", rowContent: "1.0", rowTintColor: .purple)
+                
+                CustomListRowView(rowLabel: "Developer", rowIcon: "ellipsis.curlybraces", rowContent: "John Doe", rowTintColor: .mint)
+                
+                CustomListRowView(rowLabel: "Designer", rowIcon: "paintpalette", rowContent: "Jim King", rowTintColor: .pink)
+                
+                CustomListRowView(rowLabel: "Website", rowIcon: "globe", rowTintColor: .indigo, rowLinkLabel: "Credo Academy", rowDestinstion: "https://credo.academy")
                 
             } //: SECTION
         } //: LIST

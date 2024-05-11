@@ -13,6 +13,7 @@
 		B127F8CC2BEBBEDB00FD51B1 /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B127F8CB2BEBBEDB00FD51B1 /* MotionAnimationView.swift */; };
 		B14DF96D2BED49F300889A31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DF96C2BED49F300889A31 /* ContentView.swift */; };
 		B14DF96F2BED4B0F00889A31 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DF96E2BED4B0F00889A31 /* SettingsView.swift */; };
+		B1559CE72BEF5AA600E9BF2D /* CustomListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1559CE62BEF5AA600E9BF2D /* CustomListRowView.swift */; };
 		B1EB02BF2BEAA1D6005501BB /* HikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB02BE2BEAA1D6005501BB /* HikeApp.swift */; };
 		B1EB02C32BEAA1D7005501BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EB02C22BEAA1D7005501BB /* Assets.xcassets */; };
 		B1EB02C62BEAA1D7005501BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EB02C52BEAA1D7005501BB /* Preview Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		B127F8CB2BEBBEDB00FD51B1 /* MotionAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionAnimationView.swift; sourceTree = "<group>"; };
 		B14DF96C2BED49F300889A31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B14DF96E2BED4B0F00889A31 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B1559CE62BEF5AA600E9BF2D /* CustomListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListRowView.swift; sourceTree = "<group>"; };
 		B1EB02BB2BEAA1D6005501BB /* Hike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EB02BE2BEAA1D6005501BB /* HikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeApp.swift; sourceTree = "<group>"; };
 		B1EB02C22BEAA1D7005501BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				B127F8C52BEB862100FD51B1 /* CustomButtonView.swift */,
 				B127F8C92BEBB15A00FD51B1 /* CustomCircleView.swift */,
 				B127F8CB2BEBBEDB00FD51B1 /* MotionAnimationView.swift */,
+				B1559CE62BEF5AA600E9BF2D /* CustomListRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				B127F8C82BEB952700FD51B1 /* GradientButton.swift in Sources */,
 				B127F8CA2BEBB15A00FD51B1 /* CustomCircleView.swift in Sources */,
+				B1559CE72BEF5AA600E9BF2D /* CustomListRowView.swift in Sources */,
 				B1EB02CD2BEAA795005501BB /* CardView.swift in Sources */,
 				B1EB02D32BEAABD5005501BB /* ColorExtention.swift in Sources */,
 				B127F8C62BEB862100FD51B1 /* CustomButtonView.swift in Sources */,
@@ -325,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hike/Preview Content\"";
@@ -354,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hike/Preview Content\"";
